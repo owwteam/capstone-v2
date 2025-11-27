@@ -1,159 +1,553 @@
+@use 'base';
 @use 'mixins';
 
-.hero{
-  padding-top: 176px;
-  padding-bottom: 80px;
-  background-color: #E08C30;
-  background: #E08C30 url('../assets/images/hero_wide_screen.webp') no-repeat;
-  background-position: center;
-  background-size: cover;
-  color: white;
+.job-hero {
+  background: url("../assets/images/job-hero__background.webp") center / cover no-repeat fixed;
+  overflow: hidden;
+  padding-top: 45px;
 
   @include mixins.respond(md) {
-    padding-top: 120px;
+    padding-top: 36px;
   }
-  
-  &__title {
-    font-size: 120px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 100%;
-    letter-spacing: -4.8px;
-    text-transform: uppercase;
-    max-width: 70%;
-    margin-bottom: 32px;
+
+  .container {
+    position: relative;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 100px;
+    padding-top: 64px;
+    padding-bottom: 32px;
+
+    @include mixins.respond(xl) {
+      gap: 64px;
+    }
+
+    @include mixins.respond(md) {
+      gap: 64px;
+      padding-top: 42px;
+      padding-bottom: 24px;
+    }
+
+    @include mixins.respond(sm) {
+      gap: 42px;
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+    position: relative;
+    z-index: 1;
 
     @include mixins.respond(lg) {
-      font-size: 80px;
-      letter-spacing: -3px;
-    }
-
-    @include mixins.respond(md) {
-      font-size: 48px;
-      letter-spacing: -1.5px;
-      max-width: 90%;
-    }
-
-    &-wrap{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-
-      span{
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 100%; /* 16px */
-        letter-spacing: -0.16px;
-
-        &{
-          @include mixins.font('secondary');
-        }
-      }
-    }
-
-    span{
-      width: 32px;
-      height: 32px;
-      display: inline-block;
-      margin-inline: 0.8rem;
-      background-color: #0084FF;
-      top: -1.5rem;
-      position: relative;
-      background: url('../assets/images/hero_title_icon.webp') no-repeat;
-      background-position: center;
-      background-size: contain;
-
-      @include mixins.respond(lg) {
-        top: -1rem;
-      }
-
-      @include mixins.respond(md) {
-        top: -0.5rem;
-        width: 25px;
-        height: 24px;
-        margin-inline: 0.2rem;
-      }
+      gap: 32px;
     }
   }
 
-  &__tag-group{
+  &__bottom {
     display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 83px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    max-width: 858px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
 
-    @include mixins.respond(md) {
-      margin-bottom: 42px;
+    @include mixins.respond(xl) {
+      max-width: 758px;
+    }
+
+    @include mixins.respond(sm) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
     }
   }
 
-  &__desc{
-    max-width: 50%;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: -0.18px;
-
-    &{
-      @include mixins.font('secondary');
-    }
-
-    @include mixins.respond(md) {
-      max-width: 100%;
-      font-size: 14px;
-      letter-spacing: -0.05px;
-    }
-  }
-
-  &__tagline{
+  &__inner {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 16px;
-    max-width: 30%;
 
-    @include mixins.respond(md) {
-      max-width: 100%;
+    @include mixins.respond(lg) {
       align-items: flex-start;
     }
+  }
 
-    p{
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 100%;
-      letter-spacing: -0.96px;
-      text-transform: uppercase;
-      text-align: right;
+  &__label {
+    font-family: base.$font-primary;
+    color: #FFF;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 88%;
+    letter-spacing: -0.24px;
+    text-transform: uppercase;
+    max-width: 130px;
 
-      @include mixins.respond(md) {
-        text-align: left;
-        font-size: 18px;
-        letter-spacing: -0.46px;
+    @include mixins.respond(lg) {
+      font-size: 18px;
+      max-width: 98px;
+    }
+  }
+
+  &__accent {
+    font-family: base.$font-primary;
+    color: #FFA100;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 88%;
+    letter-spacing: -0.24px;
+    text-transform: uppercase;
+    
+    @include mixins.respond(lg) {
+      font-size: 18px;
+    }
+  }
+
+  &__span {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    background-color: #0084FF;
+    position: relative;
+    background: url('../assets/images/job-hero__vector-tigline-title.webp') no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    @include mixins.respond(sm) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__wrap {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 32px;
+
+    @include mixins.respond(lg) {
+      &:first-child {
+        flex-direction: row-reverse;
+      }
+    }
+
+    @include mixins.respond(sm) {
+      gap: 18px;
+    }
+
+    @include mixins.respond(sm) {
+      &:last-child {
+        flex-direction: column;
       }
     }
   }
 
-  &__foot{
-    max-width: 100%;
-    padding-inline: unset;
-    padding-top: 48px;
+  &__box-button {
+    border-radius: 61.983px;
+    border: 2.479px solid #38544A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 349px;
+    padding: 8px;
+    gap: 71px;
 
-    .container{
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+    & img {
+      max-width: 82.437px;
+      max-height: 42.768px;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include mixins.respond(xl) {
+      gap: 32px;
+    }
+  }
+
+  &__box-summary {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 332px;
+    & img {
+      max-width: 30px;
+      max-height: 31px;
+      width: 100%;
+      height: 100%;
 
       @include mixins.respond(md) {
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: start;
-        gap: 42px;
+        max-width: 24px;
       }
+    }
+  }
+
+  &__summary {
+    color: #38544A;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%; /* 25.6px */
+    text-transform: uppercase;
+  }
+
+  &__box-join {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    border-radius: 32px;
+    background: #175941;
+    padding: 8px;
+
+    @include mixins.respond(sm) {
+      width: 100%;
+      border-radius: 16px;
+    }
+  }
+
+  .box-join {
+    &__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 8px;
+
+      &-icon {
+        padding: 16px;
+        border-radius: 32px;
+        background-color: #FFA100;
+        display: flex;
+
+        @include mixins.respond(xl) {
+          padding: 12px;
+        }
+      }
+
+      & img {
+        max-width: 20px;
+        max-height: 20px;
+        width: 100%;
+        height: 100%;
+      }
+      &--custom {
+        display: flex;
+        padding: 24px 24px 16px 24px;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 24px;
+        background: #FFF;
+
+        @include mixins.respond(sm) {
+          width: 100%;
+          padding: 18px 18px 12px 18px;
+          border-radius: 16px;
+        }
+      }
+    }
+    &__title {
+      color: #2C1A32;
+      text-align: center;
+      font-family: Thunder;
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 88%; 
+      letter-spacing: -0.8px;
+      text-transform: uppercase;
+
+      @include mixins.respond(xl) {
+        font-size: 64px;
+      }
+
+      @include mixins.respond(sm) {
+        font-size: 42px;
+        letter-spacing: -0.3px;
+      }
+    }
+
+    &__span {
+      color: #FFF;
+      font-family: Thunder;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 88%; /* 28.16px */
+      letter-spacing: -0.32px;
+      text-transform: uppercase;
+
+      @include mixins.respond(xl) {
+        font-size: 24px;
+        letter-spacing: -0.12px;
+      }
+
+      @include mixins.respond(sm) {
+        letter-spacing: 0;
+      }
+    }
+  }
+
+  &__media {
+    position: absolute;
+    right: -80px;
+    bottom: 0;
+    max-width: 663px;
+    max-height: 928px;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include mixins.respond(xl) {
+      max-width: 563px;
+      max-height: 828px;
+    }
+
+    @include mixins.respond(lg) {
+      display: none;
     }
   }
 }
+
+.heading__h1 {
+  font-family: base.$font-primary;
+  color: #FFF;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 88%; 
+  letter-spacing: -1.28px;
+  text-transform: uppercase;
+  &--accent {
+    color: #FFA100;
+  }
+
+  @include mixins.respond(xl) {
+    font-size: 97px;
+  }
+
+  @include mixins.respond(sm) {
+    font-size: 54px;
+    letter-spacing: -0.28px;
+  }
+}
+
+.btn{
+  font-family: base.$font-primary !important;
+  color: #01120C;
+  text-align: center;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 88%; /* 28.16px */
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 300ms ease;
+
+  @include mixins.respond(xl) {
+    font-size: 24px;
+  }
+
+  @include mixins.respond(md) {
+    padding: 12px 24px;
+    letter-spacing: -0.12px;
+  }
+
+  @include mixins.respond(sm) {
+    font-size: 24px;
+    letter-spacing: 0;
+  }
+
+  &:hover{
+    filter: brightness(0.9);
+    text-decoration: underline;
+  }
+
+  &--primary {
+    padding: 24px 41px 18px;
+    border-radius: 61.983px;
+    background: #FFA100;
+    flex-shrink: 0;
+
+    @include mixins.respond(xl) {
+      padding: 18px 32px 14px;
+    }
+
+    @include mixins.respond(sm) {
+      padding: 16px 28px 12px;
+    }
+  }
+}
+
+// .hero{
+//   padding-top: 176px;
+//   padding-bottom: 80px;
+//   background-color: #E08C30;
+//   background: #E08C30 url('../assets/images/hero_wide_screen.webp') no-repeat;
+//   background-position: center;
+//   background-size: cover;
+//   color: white;
+
+//   @include mixins.respond(md) {
+//     padding-top: 120px;
+//   }
+  
+//   &__title {
+//     font-size: 120px;
+//     font-style: normal;
+//     font-weight: 800;
+//     line-height: 100%;
+//     letter-spacing: -4.8px;
+//     text-transform: uppercase;
+//     max-width: 70%;
+//     margin-bottom: 32px;
+
+//     @include mixins.respond(lg) {
+//       font-size: 80px;
+//       letter-spacing: -3px;
+//     }
+
+//     @include mixins.respond(md) {
+//       font-size: 48px;
+//       letter-spacing: -1.5px;
+//       max-width: 90%;
+//     }
+
+//     &-wrap{
+//       display: flex;
+//       flex-direction: row;
+//       justify-content: space-between;
+//       align-items: flex-start;
+
+//       span{
+//         font-size: 16px;
+//         font-style: normal;
+//         font-weight: 400;
+//         line-height: 100%; /* 16px */
+//         letter-spacing: -0.16px;
+
+//         &{
+//           @include mixins.font('secondary');
+//         }
+//       }
+//     }
+
+//     span{
+//       width: 32px;
+//       height: 32px;
+//       display: inline-block;
+//       margin-inline: 0.8rem;
+//       background-color: #0084FF;
+//       top: -1.5rem;
+//       position: relative;
+//       background: url('../assets/images/hero_title_icon.webp') no-repeat;
+//       background-position: center;
+//       background-size: contain;
+
+//       @include mixins.respond(lg) {
+//         top: -1rem;
+//       }
+
+//       @include mixins.respond(md) {
+//         top: -0.5rem;
+//         width: 25px;
+//         height: 24px;
+//         margin-inline: 0.2rem;
+//       }
+//     }
+//   }
+
+//   &__tag-group{
+//     display: flex;
+//     gap: 12px;
+//     align-items: center;
+//     margin-bottom: 83px;
+//     flex-wrap: wrap;
+
+//     @include mixins.respond(md) {
+//       margin-bottom: 42px;
+//     }
+//   }
+
+//   &__desc{
+//     max-width: 50%;
+//     font-size: 18px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: 150%;
+//     letter-spacing: -0.18px;
+
+//     &{
+//       @include mixins.font('secondary');
+//     }
+
+//     @include mixins.respond(md) {
+//       max-width: 100%;
+//       font-size: 14px;
+//       letter-spacing: -0.05px;
+//     }
+//   }
+
+//   &__tagline{
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-end;
+//     gap: 16px;
+//     max-width: 30%;
+
+//     @include mixins.respond(md) {
+//       max-width: 100%;
+//       align-items: flex-start;
+//     }
+
+//     p{
+//       font-size: 24px;
+//       font-style: normal;
+//       font-weight: 400;
+//       line-height: 100%;
+//       letter-spacing: -0.96px;
+//       text-transform: uppercase;
+//       text-align: right;
+
+//       @include mixins.respond(md) {
+//         text-align: left;
+//         font-size: 18px;
+//         letter-spacing: -0.46px;
+//       }
+//     }
+//   }
+
+//   &__foot{
+//     max-width: 100%;
+//     padding-inline: unset;
+//     padding-top: 48px;
+
+//     .container{
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: flex-end;
+
+//       @include mixins.respond(md) {
+//         flex-direction: column;
+//         align-items: flex-start;
+//         justify-content: start;
+//         gap: 42px;
+//       }
+//     }
+//   }
+// }

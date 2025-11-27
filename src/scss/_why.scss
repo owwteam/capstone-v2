@@ -1,0 +1,295 @@
+@use 'base';
+@use 'mixins';
+
+.section-why {
+  background-color: #01120C;
+  overflow: hidden;
+  padding-top: 180px;
+  padding-bottom: 80px;
+
+  @include mixins.respond(xl) {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  @include mixins.respond(md) {
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .why {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+
+    @include mixins.respond(xl) {
+      gap: 40px;
+    }
+
+    @include mixins.respond(md) {
+      gap: 32px;
+    }
+
+    &-head {
+      display: flex;
+      justify-content: space-between;
+
+      @include mixins.respond(md) {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .heading__h2 {
+        color: #FFF;
+        font-family: base.$font-primary;
+        font-size: 64px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 88%; /* 56.32px */
+        letter-spacing: -0.64px;
+        text-transform: uppercase;
+        max-width: 1028px;
+
+        & span {
+          color: #175941;
+          font-family: base.$font-primary;
+          font-size: 64px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 88%;
+          letter-spacing: -0.64px;
+          text-transform: uppercase;
+        }
+
+        @include mixins.respond(xl) {
+          font-size: 48px;
+          letter-spacing: -0.34px;
+          max-width: 768px;
+
+          span {
+            font-size: 48px;
+            letter-spacing: -0.34px;
+          }
+        }
+
+        @include mixins.respond(sm) {
+          font-size: 42px;
+          letter-spacing: -0.14px;
+
+          span {
+            font-size: 42px;
+            letter-spacing: -0.14px;
+          }
+        }
+      }
+    }
+
+    &-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 64px;
+
+      @include mixins.respond(md) {
+        flex-direction: column;
+      }
+    }
+
+    &-wrap {
+      &__card {
+        @include mixins.respond(md) {
+            display: none;
+        }
+        .why__card {
+          display: flex;
+          flex-direction: column;
+          gap: 72px;
+          max-width: 464px;
+          width: 100%;
+
+          @include mixins.respond(xl) {
+            gap: 42px;
+          }
+
+          &__media {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+          }
+
+          &__img {
+            width: 100%;
+          }
+
+          &__ornament {
+            width: 100%;
+            max-width: 248px;
+            position: absolute;
+            top: -124px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            mix-blend-mode: difference;
+
+            @include mixins.respond(xl) {
+              max-width: 160px;
+              top: -82px;
+            }
+          }
+
+          &__body {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+          }
+
+          &__title {
+            color: #FFF;
+            font-family: base.$font-primary;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 88%; /* 21.12px */
+            letter-spacing: -0.24px;
+            text-transform: uppercase;
+
+            @include mixins.respond(xl) {
+              font-size: 18px;
+              letter-spacing: -0.04px;
+            }
+          }
+
+          &__vector {
+            max-width: 42px;
+            max-height: 82px;
+            width: 100%;
+            height: 100%;
+
+            @include mixins.respond(xl) {
+              max-width: 28px;
+            }
+          }
+        }
+      }
+      &__accordions {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        max-width: 796px;
+
+        @include mixins.respond(xl) {
+          gap: 18px;
+        }
+
+        .why__accordion {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          border-bottom: 1px solid #002619;
+          padding: 24px;
+          transition: all 300ms ease;
+          cursor: pointer;
+
+          @include mixins.respond(xl) {
+            padding: 16px;
+          }
+
+          &__content {
+            display: flex;
+            gap: 32px;
+
+            @include mixins.respond(md) {
+              gap: 16px;
+            }
+
+            @include mixins.respond(sm) {
+              flex-direction: column;
+            }
+          }
+
+          &__vector {
+            max-width: 30px;
+            max-height: 30px;
+            width: 100%;
+            height: 100%;
+            transition: all 300ms ease;
+
+            @include mixins.respond(xl) {
+              max-width: 24px;
+            }
+          }
+
+          &__inner {
+            display: flex;
+            flex-direction: column;
+            max-width: 456px;
+            gap: 8px;
+          }
+
+          &__title {
+            color: #FFF;
+            font-family: base.$font-primary;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 88%; /* 42.24px */
+            letter-spacing: -0.48px;
+            text-transform: uppercase;
+            transition: all 300ms ease;
+
+            @include mixins.respond(xl) {
+              font-size: 36px;
+              letter-spacing: -0.18px;
+            }
+          }
+
+          &__summary {
+            color: rgba(255, 255, 255, 0.64);
+            font-family: base.$font-base;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: -0.64px;
+          }
+
+          &__arrow {
+            max-width: 59px;
+            max-height: 48px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 300ms ease, margin 200ms ease;
+            margin-right: 32px;
+
+            @include mixins.respond(xl) {
+              max-width: 42px;
+              margin-right: 24px;
+            }
+
+            @include mixins.respond(sm) {
+              display: none;
+            }
+          }
+
+          &:hover {
+            background-color: #2C1A32;
+
+            .why__accordion__vector {
+              transform: rotate(65deg);
+            }
+
+            .why__accordion__title {
+              color: #FFA100;
+            }
+
+            .why__accordion__arrow {
+              opacity: 1;
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

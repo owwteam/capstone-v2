@@ -1,6 +1,6 @@
 {
-	"name": "barebones-gulp-project",
-	"version": "1.0.0",
+	"name": "capstone-v2",
+	"version": "2.0.0",
 	"scripts": {
 		"dev": "gulp",
 		"build": "gulp build"

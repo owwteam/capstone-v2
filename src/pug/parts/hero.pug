@@ -1,20 +1,50 @@
-section.hero
-  .container
-    .hero__title-wrap
-      h1.hero__title(data-aos="fade-up" data-aos-delay="200" data-aos-offset="20") 
-        | Barebone 
-        span 
-        | Html Pugjs SCSS
-      span(data-aos="fade-up" data-aos-delay="250" data-aos-offset="20") ( 01 )
-    .hero__tag-group(data-aos="fade-up" data-aos-delay="400" data-aos-offset="20") 
-      .tag HTML
-      .tag PUGJS
-      .tag SCSS
-  .container.hero__foot
-    .container
-        p.hero__desc(data-aos="fade-up" data-aos-delay="600" data-aos-offset="20") 
-          strong He is an innovator whose ideas transcend disciplines, 
-          | a global entrepreneur who helped shape modern e-commerce, and a celebrated artist whose work has left a mark in prestigious institutions worldwide.
-        .hero__tagline
-          img(src="/assets/images/hero_icon.webp", alt="", height="48", width="48" data-aos="fade" data-aos-delay="750" data-aos-offset="20")
-          p(data-aos="fade-up" data-aos-delay="700" data-aos-offset="20") visionary whose work defies convention
+//- section.hero
+//-   .container
+//-     .hero__title-wrap
+//-       h1.hero__title(data-aos="fade-up" data-aos-delay="200" data-aos-offset="20") 
+//-         | Barebone 
+//-         span 
+//-         | Html Pugjs SCSS
+//-       span(data-aos="fade-up" data-aos-delay="250" data-aos-offset="20") ( 01 )
+//-     .hero__tag-group(data-aos="fade-up" data-aos-delay="400" data-aos-offset="20") 
+//-       .tag HTML
+//-       .tag PUGJS
+//-       .tag SCSS
+//-   .container.hero__foot
+//-     .container
+//-         p.hero__desc(data-aos="fade-up" data-aos-delay="600" data-aos-offset="20") 
+//-           strong He is an innovator whose ideas transcend disciplines, 
+//-           | a global entrepreneur who helped shape modern e-commerce, and a celebrated artist whose work has left a mark in prestigious institutions worldwide.
+//-         .hero__tagline
+//-           img(src="/assets/images/hero_icon.webp", alt="", height="48", width="48" data-aos="fade" data-aos-delay="750" data-aos-offset="20")
+//-           p(data-aos="fade-up" data-aos-delay="700" data-aos-offset="20") visionary whose work defies convention
+
+section.job-hero
+  .container 
+    .job-hero__content 
+      .job-hero__top
+        p.job-hero__label DEVELOPER PORTAL 
+          span.job-hero__accent ( ©2025 )
+        .job-hero__inner 
+          .job-hero__wrap 
+            span.job-hero__span
+            h1.heading__h1.heading__h1--accent EMPOWERING 
+          h1.heading__h1 INNOVATORS BUILDING
+          .job-hero__wrap 
+            h1.heading__h1 TOMORROW
+            .job-hero__box-button
+              img(src='../../assets/images/hero-box__vector.webp', alt='Deskripsi gambar')
+              a.btn.btn--primary(href='#') Join Now
+      .job-hero__bottom
+        .job-hero__box-summary 
+          img(src='../../assets/images/job-hero__vector-tigline.webp', alt='Deskripsi gambar')
+          p.job-hero__summary Every organization is different; the problems rhyme. Relianta offers solution patterns you can tailor to your stack and jurisdiction.
+        .job-hero__box-join 
+          .box-join__inner 
+            span.box-join__span People join with us
+            .box-join__inner-icon 
+              img(src='../../assets/images//job-hero__vector-tigline__white.webp', alt='Deskripsi gambar')
+          .box-join__inner--custom 
+            h2.box-join__title 12.903.284
+      .job-hero__media 
+        img.job-hero__img(src='../../assets/images/job-hero__img.webp', alt='Deskripsi gambar')

@@ -10,11 +10,35 @@
   }
 }
 
+@font-face {
+  font-family: 'Thunder';
+  src: url('../assets/images/Thunder-LC.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../assets/images/Thunder-BoldLC.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'Thunder';
+  src: url('../assets/images/Thunder-SemiBoldLC.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 @mixin font($type) {
   @if $type == 'primary' {
-    font-family: "Inter", sans-serif;
+    font-family: "Thunder", sans-serif;
   } @else {
-    font-family: 'General Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
 }
