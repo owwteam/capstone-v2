@@ -34,11 +34,18 @@
   font-display: swap;
 }
 
-
 @mixin font($type) {
   @if $type == 'primary' {
     font-family: "Thunder", sans-serif;
   } @else {
     font-family: 'Inter', sans-serif;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    display: table;
+    content: "";
+    clear: both;
   }
 }

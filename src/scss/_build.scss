@@ -1,0 +1,242 @@
+@use 'base';
+@use 'mixins';
+
+.section-build {
+  padding-block: 80px;
+
+  @include mixins.respond(lg) {
+    padding-block: 40px;
+  }
+
+  .build {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @include mixins.respond(lg) {
+      gap: 32px;
+    }
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+
+      @include mixins.respond(lg) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .eyebrow {
+        margin-bottom: 25px;
+
+        @include mixins.respond(xl) {
+          margin-bottom: 16px;
+        }
+
+        @include mixins.respond(md) {
+          margin-bottom: 0;
+        }
+      }
+
+      .heading__h2 {
+        color: #FFF;
+        font-family: base.$font-primary;
+        font-size: 160px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 88%; /* 140.8px */
+        letter-spacing: -1.6px;
+        text-transform: uppercase;
+        max-width: 1161px;
+
+        @include mixins.respond(xl) {
+          font-size: 98px;
+        }
+
+        @include mixins.respond(lg) {
+          font-size: 64px;
+          letter-spacing: -1px;
+        }
+      }
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+
+      @include mixins.respond(xl) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__card {
+      background-color: #0E4632;
+      border-radius: 32px;
+      overflow: hidden;
+      
+      @include mixins.respond(lg) {
+        border-radius: 18px;
+      }
+
+      &:last-child {
+        background-color: #2C1A32;
+
+        .build__card__body {
+          background-color: #36233C;
+        }
+
+        .build__item {
+          background-color: #2C1A32;
+        }
+
+        .build__sign__title {
+          color: #FFF;
+          font-family: base.$font-base;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 160%; /* 32px */
+          letter-spacing: -0.8px;
+          text-transform: unset;
+        }
+      }
+
+      &__head {
+        padding-top: 40px;
+        padding-bottom: 24px;
+
+        @include mixins.respond(lg) {
+          padding-top: 24px;
+          padding-bottom: 14px;
+        }
+      }
+      &__title {
+        color: #FFF;
+        text-align: center;
+        font-family: base.$font-primary;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 88%; /* 42.24px */
+        letter-spacing: -0.48px;
+        text-transform: uppercase;
+
+        @include mixins.respond(lg) {
+          font-size: 32px;
+          letter-spacing: -0.18px;
+        }
+      }
+      &__body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        background-color: #175941;
+        border-radius: 40px;
+
+        @include mixins.respond(lg) {
+          border-radius: 18px;
+          gap: 24px;
+        }
+      }
+
+      &__items {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+
+        @include mixins.respond(sm) {
+          grid-template-columns: 1fr;
+        }
+
+        .build__item {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+          padding: 24px;
+          background-color: #0E4632;
+          border-radius: 24px;
+
+          @include mixins.respond(lg) {
+            gap: 16px;
+            padding: 16px;
+            border-radius: 16px;
+          }
+
+          &__icon {
+            max-width: 24px;
+            max-height: 24px;
+            width: 100%;
+            height: 100%;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          &__summary {
+            color: rgba(255, 255, 255, 0.40);
+            font-family: base.$font-base;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+            letter-spacing: -0.64px;
+
+            span {
+              color: #fff;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      &__sign {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0 24px 24px;
+        gap: 16px;
+
+        @include mixins.respond(lg) {
+          padding: 0 16px 16px;
+          align-items: flex-start;
+        }
+
+        @include mixins.respond(sm) {
+          padding: 0;
+          flex-direction: column;
+        }
+
+        .build__sign {
+          &__inner {
+            display: flex;
+            flex-direction: column;
+            max-width: 433px;
+          }
+          &__title {
+            color: #FFF;
+            font-family: base.$font-primary;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%; /* 24px */
+            text-transform: uppercase;
+          }
+          &__summary {
+            color: rgba(255, 255, 255, 0.40);
+            font-family: base.$font-base;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%; /* 25.6px */
+            letter-spacing: -0.64px;
+          }
+          &__buttons {
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+}

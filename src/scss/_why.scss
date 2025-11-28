@@ -41,45 +41,10 @@
 
       .heading__h2 {
         color: #FFF;
-        font-family: base.$font-primary;
-        font-size: 64px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 88%; /* 56.32px */
-        letter-spacing: -0.64px;
-        text-transform: uppercase;
         max-width: 1028px;
 
-        & span {
-          color: #175941;
-          font-family: base.$font-primary;
-          font-size: 64px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 88%;
-          letter-spacing: -0.64px;
-          text-transform: uppercase;
-        }
-
         @include mixins.respond(xl) {
-          font-size: 48px;
-          letter-spacing: -0.34px;
           max-width: 768px;
-
-          span {
-            font-size: 48px;
-            letter-spacing: -0.34px;
-          }
-        }
-
-        @include mixins.respond(sm) {
-          font-size: 42px;
-          letter-spacing: -0.14px;
-
-          span {
-            font-size: 42px;
-            letter-spacing: -0.14px;
-          }
         }
       }
     }
@@ -170,6 +135,7 @@
           }
         }
       }
+
       &__accordions {
         display: flex;
         flex-direction: column;
@@ -259,7 +225,8 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 300ms ease, margin 200ms ease;
+            transform: scale(0.5);
+            transition: opacity 300ms ease, margin 200ms ease, transform 300ms ease;
             margin-right: 32px;
 
             @include mixins.respond(xl) {
@@ -285,6 +252,7 @@
 
             .why__accordion__arrow {
               opacity: 1;
+              transform: scale(1);
               margin-right: 0;
             }
           }
