@@ -1,14 +1,13 @@
-section.navbar
+navbar.navbar
   .container
-    .navbar__logo
-      a(href="#") Brand
+    a.navbar__logo(href="/")
+      img(src='../../assets/images/tagline-logo.webp', alt='Deskripsi gambar')
 
     .navbar__menu
-      a(href="#") Home
-      a(href="#") Insight
-      a(href="#") Services
-      a(href="#") Contact
-      a.btn(href="#") Let's Talk!
+      a(href="/").nav__link Home
+      a(href="#").nav__link Integration
+      a(href="#").nav__link Find Job
+      a(href="#").nav__link Post Job
 
     button.navbar__toggle(type="button" aria-label="Toggle Menu")
       span

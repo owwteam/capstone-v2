@@ -1,3 +1,4 @@
+@use 'base';
 @use 'mixins';
 
 .navbar {
@@ -6,9 +7,23 @@
   left: 0;
   width: 100%;
   padding-block: 24px;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  // border-bottom: 1px solid rgba(255,255,255,0.2);
   z-index: 999;
   transition: all 300ms ease;
+
+  @include mixins.respond(lg) {
+    padding-block: 14px;
+  }
+
+  &__logo {
+    display: flex;
+    img {
+      max-width: 74px;
+      max-height: 21px;
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   &.hidden {
     transform: translateY(-100%);
@@ -20,36 +35,45 @@
     -webkit-backdrop-filter: blur(10px) saturate(120%);
     background-color: rgba(255,255,255,0.10);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding-block: 12px;
-
-    .navbar__menu a {
-      color: black;
-    }
+    padding-block: 14px;
   }
 
   .container {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
     justify-content: space-between;
+    align-items: center;
+    
+    @include mixins.respond(lg) {
+      grid-template-columns: repeat(2, max-content);
+    }
   }
 
   &__menu {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 24px;
+    white-space: nowrap;
 
-    a {
+    .nav__link {
       text-decoration: none;
       color: white;
       font-size: 16px;
       font-weight: 400;
       letter-spacing: -0.16px;
-      @include mixins.font('secondary');
+      font-family: base.$font-base;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
 
       @include mixins.respond(md) {
-        font-size: 14px;
+        font-size: 32px;
       }
     }
+
 
     @include mixins.respond(md) {
       position: fixed;
@@ -94,6 +118,7 @@
 
     @include mixins.respond(md) {
       display: flex;
+      align-items: flex-end;
     }
 
 
