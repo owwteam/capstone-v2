@@ -6,9 +6,9 @@
   overflow: hidden;
   padding-top: 45px;
 
-  @include mixins.respond(md) {
-    padding-top: 36px;
-  }
+  // @include mixins.respond(md) {
+  //   padding-top: 36px;
+  // }
 
   .container {
     position: relative;
