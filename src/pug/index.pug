@@ -12,13 +12,13 @@ html
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@1&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   body
+    include parts/navbar.pug
     main
-      include parts/navbar.pug
       include parts/hero.pug
       include parts/why.pug
       include parts/core.pug
       include parts/build.pug
-      include parts/footer.pug
+    include parts/footer.pug
 
     script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
     script(src="script.js")
