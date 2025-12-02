@@ -40,7 +40,7 @@
       }
 
       .heading__h2 {
-        color: #FFF;
+        color: base.$color--white;
         font-family: base.$font-primary;
         font-size: 160px;
         font-style: normal;
@@ -98,7 +98,7 @@
         }
 
         .build__sign__title {
-          color: #FFF;
+          color: base.$color--white;
           font-family: base.$font-base;
           font-size: 20px;
           font-style: normal;
@@ -119,7 +119,7 @@
         }
       }
       &__title {
-        color: #FFF;
+        color: base.$color--white;
         text-align: center;
         font-family: base.$font-primary;
         font-size: 48px;
@@ -140,7 +140,7 @@
         flex-direction: column;
         justify-content: space-between;
         gap: 32px;
-        background-color: #175941;
+        background-color: base.$color--secondary;
         border-radius: 40px;
         height: 100%;
 
@@ -195,14 +195,14 @@
             letter-spacing: -0.64px;
 
             span {
-              color: #fff;
+              color: base.$color--white;
               font-weight: 700;
             }
           }
           &:hover {
             background-color: #0D3B2A;
             .build__item__icon {
-              transform: rotate(65deg);
+              transform: rotate(85deg) scale(1.2);
             }
           }
         }
@@ -231,7 +231,7 @@
             max-width: 433px;
           }
           &__title {
-            color: #FFF;
+            color: base.$color--white;
             font-family: base.$font-primary;
             font-size: 24px;
             font-style: normal;

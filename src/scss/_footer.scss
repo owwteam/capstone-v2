@@ -41,14 +41,19 @@
     }
   }
   &__link {
-    color: #FFF;
+    color: base.$color--white;
     font-family: base.$font-base;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 128%;
+    line-height: 138%;
     letter-spacing: -0.48px;
     text-transform: uppercase;
+    transition: all 300ms ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
   &__tagline {
     width: 100%;

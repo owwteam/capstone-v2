@@ -43,3 +43,39 @@ navToggle.addEventListener("click", () => {
 		document.body.style.overflow = "";
 	}
 });
+
+// // Navbar Currennt Page
+// const navLinks = document.querySelectorAll('.nav__link');
+// const currentURL = window.location.href.replace(/\/$/, ''); 
+
+// navLinks.forEach(link => {
+//   link.classList.remove('active');
+    
+//   const linkURL = link.href.replace(/\/$/, '');
+
+//   if (linkURL === currentURL) {
+//     link.classList.add('active');
+//   }
+// });
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Penandaan Tautan Aktif
+  const navLinks = document.querySelectorAll('.nav__link');
+  const currentURL = window.location.href.replace(/\/$/, '');
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    const linkURL = link.href.replace(/\/$/, '');
+    if (linkURL === currentURL) {
+      link.classList.add('active');
+    }
+  });
+
+  // Pencegahan Scroll ke Atas
+  const hashLinks = document.querySelectorAll('a[href="#"]');
+  hashLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+    });
+  });
+});

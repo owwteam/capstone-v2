@@ -3,14 +3,23 @@
 $font-base: "Inter", sans-serif;
 $font-primary: "Thunder", sans-serif;
 
-*{
+$color--white: #FFFFFF;
+$color--black: #000000;
+$color--dark-purple: #01120C;
+$color--purple: #2C1A32;
+
+$color--primary: #FFA100; 
+$color--secondary: #175941;
+
+*, html {
   box-sizing: border-box;
   margin: unset;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: $font-base;
-  background: #01120C;
+  background: $color--dark-purple;
   color: black;
 
   h1, h2, h3, h4, h5, h6, p {
@@ -58,7 +67,7 @@ section{
   letter-spacing: -1.28px;
   text-transform: uppercase;
   &--accent {
-    color: #FFA100;
+    color: $color--primary;
   }
 
   @include mixins.respond(xl) {
@@ -82,7 +91,7 @@ section{
   text-transform: uppercase;
 
   &--accent {
-    color: #175941;
+    color: $color--secondary;
   }
 
   @include mixins.respond(xl) {
@@ -108,7 +117,7 @@ section{
   text-transform: uppercase;
 
   &__accent {
-    color: #FFA100;
+    color: $color--primary;
   }
 
   @include mixins.respond(xl) {
@@ -131,7 +140,7 @@ section{
   max-width: 130px;
 
   &__accent {
-    color: #FFA100;
+    color: $color--primary;
   }
 
   @include mixins.respond(lg) {
@@ -144,7 +153,7 @@ section{
 /* BUTTON STYLE */
 .btn{
   font-family: $font-primary;
-  color: #01120C;
+  color: $color--dark-purple;
   text-align: center;
   font-size: 32px;
   font-style: normal;
@@ -182,7 +191,23 @@ section{
   &--primary {
     padding: 24px 41px 18px;
     border-radius: 61.983px;
-    background: #FFA100;
+    background: $color--primary;
+    flex-shrink: 0;
+
+    @include mixins.respond(xl) {
+      padding: 18px 32px 14px;
+    }
+
+    @include mixins.respond(sm) {
+      padding: 16px 28px 12px;
+    }
+  }
+
+  &--primary {
+    padding: 24px 41px 18px;
+    border-radius: 61.983px;
+    background: $color--primary;
+    color: $color--white;
     flex-shrink: 0;
 
     @include mixins.respond(xl) {
@@ -197,14 +222,14 @@ section{
   &--secondary {
     padding: 12px 24px;
     font-family: $font-base;
-    color: #01120C;
+    color: $color--dark-purple;
     font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: 160%; /* 25.6px */
     letter-spacing: -0.64px;
     border-radius: 16px;
-    background: #FFA100;
+    background: $color--primary;
     text-transform: capitalize;
   }
 }
@@ -220,7 +245,7 @@ section{
     &-icon {
       padding: 16px;
       border-radius: 32px;
-      background-color: #FFA100;
+      background-color: $color--primary;
       display: flex;
 
       @include mixins.respond(xl) {

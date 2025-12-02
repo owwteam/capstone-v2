@@ -2,7 +2,7 @@
 @use 'mixins';
 
 .section-why {
-  background-color: #01120C;
+  background-color: base.$color--dark-purple;
   overflow: hidden;
   padding-top: 180px;
   padding-bottom: 80px;
@@ -40,7 +40,7 @@
       }
 
       .heading__h2 {
-        color: #FFF;
+        color: base.$color--white;
         max-width: 1028px;
 
         @include mixins.respond(xl) {
@@ -108,7 +108,7 @@
           }
 
           &__title {
-            color: #FFF;
+            color: base.$color--white;
             font-family: base.$font-primary;
             font-size: 24px;
             font-style: normal;
@@ -194,7 +194,7 @@
           }
 
           &__title {
-            color: #FFF;
+            color: base.$color--white;
             font-family: base.$font-primary;
             font-size: 48px;
             font-weight: 700;
@@ -247,7 +247,7 @@
             }
 
             .why__accordion__title {
-              color: #FFA100;
+              color: base.$color--primary;
             }
 
             .why__accordion__arrow {
