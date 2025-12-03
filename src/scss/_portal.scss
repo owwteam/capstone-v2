@@ -1,0 +1,90 @@
+@use 'base';
+@use 'mixins';
+
+.section-portal {
+  background-color: #0B0E2E;
+  padding-block: 80px;
+
+  @include mixins.respond(lg) {
+    padding-block: 40px;
+  }
+}
+
+.portal {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  &__head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .heading__h2 {
+      color: #FFF;
+      font-family: base.$font-primary;
+      font-size: 96px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 88%; /* 84.48px */
+      letter-spacing: -0.96px;
+      text-transform: uppercase;
+
+      max-width: 616px;
+
+      @include mixins.respond(xl) {
+        font-size: 72px;
+      }
+
+      @include mixins.respond(sm) {
+        font-size: 54px;
+      }
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    @include mixins.respond(xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mixins.respond(sm) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .core__card {
+      grid-area: unset;
+      background-color: #3B438F;
+
+      &__icon {
+        color: #FFDC50;
+      }
+
+      &:hover {
+        .core__card__media {
+        opacity: 1;
+        transform: scale(1.12);
+        }
+        .core__card__icon {
+          color: base.$color--white;
+          transform: rotate(65deg);
+        }
+      }
+
+      &__decoration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include mixins.respond(xl) {
+          display: none;
+        }
+        img {
+          max-width: 40px;
+          max-height: 40px;
+        }
+      }
+    }
+  }
+}

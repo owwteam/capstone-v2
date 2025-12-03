@@ -1,11 +1,12 @@
-footer.footer 
-  .container
-    .footer__wrapper 
-      .footer__menus 
-        a.footer__link(href="#") Home
-        a.footer__link(href="#") Integration
-        a.footer__link(href="job-portal.html") Job Portal
-        a.footer__link(href="#") Find Job
-        a.footer__link(href="#") Post Job
-      .footer__tagline
-        img.footer__tagline__img(src='../../assets/images/Tagline-bg.webp', alt='Deskripsi gambar')
+mixin footer(bgClass, imgSrc)
+  footer.footer(class=bgClass) 
+    .container
+      .footer__wrapper 
+        .footer__menus 
+          a.footer__link(href="/") Home
+          a.footer__link(href="#") Integration
+          a.footer__link(href="job-portal.html") Job Portal
+          a.footer__link(href="#") Find Job
+          a.footer__link(href="#") Post Job
+        .footer__tagline
+          img.footer__tagline__img(src=imgSrc, alt='Deskripsi gambar')

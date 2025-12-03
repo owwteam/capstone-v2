@@ -207,7 +207,7 @@ section{
     padding: 24px 41px 18px;
     border-radius: 61.983px;
     background: $color--primary;
-    color: $color--white;
+    color: $color--dark-purple;
     flex-shrink: 0;
 
     @include mixins.respond(xl) {
@@ -231,6 +231,22 @@ section{
     border-radius: 16px;
     background: $color--primary;
     text-transform: capitalize;
+  }
+
+  &--tertiary {
+    padding: 24px 41px 18px;
+    border-radius: 61.983px;
+    background: #FF4426;
+    color: $color--white;
+    flex-shrink: 0;
+
+    @include mixins.respond(xl) {
+      padding: 18px 32px 14px;
+    }
+
+    @include mixins.respond(sm) {
+      padding: 16px 28px 12px;
+    }
   }
 }
 
