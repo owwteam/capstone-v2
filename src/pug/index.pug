@@ -3,7 +3,7 @@ html
   head
     meta(charset="UTF-8")
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    title Job Portal | Capstone-v2
+    title Capstone-v2
     link(rel="stylesheet", href="style.css")
     link(rel="icon", type="image/png", href="../assets/images/brand__icon.webp")
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,12 +14,12 @@ html
   body
     include parts/navbar.pug
     main
-      include parts/job_hero.pug
-      include parts/why.pug
-      include parts/core.pug
-      include parts/build.pug
+      include parts/hero.pug
+      include parts/services.pug
+      include parts/connecting.pug
+      include parts/portal.pug
     include parts/footer.pug
-    +footer('footer--green-bg', '../assets/images/Tagline-bg.webp')
+    +footer('footer--blue-bg', '../assets/images/Tagline-bg--red.webp')
 
     script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
     script(src="script.js")
