@@ -25,6 +25,7 @@ body {
   h1, h2, h3, h4, h5, h6, p {
     margin: unset;
   }
+
   img {
     object-fit: cover;
   }
@@ -330,4 +331,8 @@ section{
       letter-spacing: 0;
     }
   }
+}
+
+.text--white {
+  color: $color--white;
 }
