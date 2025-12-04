@@ -5,7 +5,7 @@
   background: radial-gradient(154.49% 103.93% at 101.7% 100%, rgba(112, 10, 96, 0.00) 0%, #2F0428 63.73%), #2F0428;
   .container {
     position: relative;
-    padding-top: 40px;
+    padding-top: 45px;
     @include mixins.respond(sm) {
       padding-top: 24px;
     }
