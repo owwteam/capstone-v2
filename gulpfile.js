@@ -1,19 +1,19 @@
 // ========== Gulp 4 Barebone (Node 22+ Async Safe) ==========
-const { src, dest, watch, series, parallel } = require("gulp");
-const sass = require("gulp-sass")(require("sass"));
-const pug = require("gulp-pug");
-const rename = require("gulp-rename");
-const browserSync = require("browser-sync").create();
-const fs = require("fs-extra"); // ✅ pengganti del
+const { src, dest, watch, series, parallel } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const pug = require('gulp-pug');
+const rename = require('gulp-rename');
+const browserSync = require('browser-sync').create();
+const fs = require('fs-extra'); // ✅ pengganti del
 
 // Folder Paths
 const paths = {
-  pug: "src/pug/**/*.pug",
-  scss: "src/scss/**/*.scss",
-  js: "src/js/**/*.js",
-  images: "src/assets/images/**/*",
-  fonts: "src/assets/fonts/**/*",
-  dist: "dist/",
+  pug: 'src/pug/**/*.pug',
+  scss: 'src/scss/**/*.scss',
+  js: 'src/js/**/*.js',
+  images: 'src/assets/images/**/*',
+  fonts: 'src/assets/fonts/**/*',
+  dist: 'dist/',
 };
 
 // 🧹 Hapus folder dist sebelum build
@@ -32,7 +32,7 @@ function compilePug() {
 // 🎨 Compile SCSS → CSS
 function compileSCSS() {
   return src(paths.scss)
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass().on('error', sass.logError))
     .pipe(dest(paths.dist))
     .pipe(browserSync.stream());
 }
@@ -43,25 +43,23 @@ function processJS() {
 }
 
 // 🖼️ Optimize Images (pakai dynamic import async-safe)
-async function optimizeImages() {
-  const imagemin = (await import("gulp-imagemin")).default;
+function optimizeImages() {
   return src(paths.images)
-    .pipe(imagemin())
-    .pipe(dest("dist/assets/images"))
+    .pipe(dest('dist/assets/images'))
     .pipe(browserSync.stream());
 }
 
 // 🔤 Copy Fonts
 function copyFonts() {
   return src(paths.fonts)
-    .pipe(dest("dist/assets/fonts"))
+    .pipe(dest('dist/assets/fonts'))
     .pipe(browserSync.stream());
 }
 
 // 🚀 Live Server + Watch
 function serve() {
   browserSync.init({
-    server: { baseDir: "dist" },
+    server: { baseDir: 'dist' },
   });
 
   watch(paths.pug, compilePug);
