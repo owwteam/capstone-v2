@@ -36,15 +36,6 @@
   @include mixins.respond(sm) {
     gap: 32px;
   }
-  &__subtext {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    @include mixins.respond(sm) {
-      align-items: flex-start;
-    }
-  }
   &__left {
     max-width: 585px;
     display: flex;
@@ -70,6 +61,15 @@
     .heading__h1 {
       &__accent {
         color: #FF9D1C;
+      }
+      &__gap {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+
+        @include mixins.respond(sm) {
+          justify-content: flex-start;
+        }
       }
     }
   }
