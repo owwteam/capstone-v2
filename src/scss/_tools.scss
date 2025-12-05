@@ -1,0 +1,88 @@
+@use 'base';
+@use 'mixins';
+
+.section-tools {
+  background-color: #2F0428;
+  padding-block: 80px;
+  @include mixins.respond(sm) {
+    padding-block: 40px;
+  }
+}
+
+.tools {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  max-width: 564px;
+  margin-inline: auto;
+  &__head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  &__download {
+    display: flex;
+    justify-content: space-between;
+    color: #FFF;
+    padding: 24px 40px;
+    border-radius: 16px;
+    background: #D11B46;
+
+    @include mixins.respond(sm) {
+      padding: 16px 20px;
+    }
+    &__secondary {
+      background: #FFF9EB;
+      color: #000;
+      .tools__download__label {
+        color: #000;
+      }
+      .tools__download__sublabel {
+        color: #000;
+      }
+    }
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      @include mixins.respond(sm) {
+        gap: 4px;
+      }
+    }
+    &__label {
+      color: #FFF;
+      font-family: base.$font-primary;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 88%; /* 28.16px */
+      letter-spacing: -0.32px;
+      text-transform: uppercase;
+
+      @include mixins.respond(sm) {
+        font-size: 24px;
+        letter-spacing: -0.02px;
+      }
+    }
+    &__sublabel {
+      color: rgba(255, 255, 255, 0.64);
+      font-family: base.$font-base;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 25.6px */
+      letter-spacing: -0.64px;
+    }
+
+    svg {
+      color: inherit;
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

@@ -5,9 +5,12 @@
 @use 'why';
 @use 'core';
 @use 'build';
-@use 'integration-hero';
 @use 'services';
 @use 'connecting';
 @use 'portal';
+
+@use 'integration-hero';
+@use 'need';
+@use 'tools';
 @use 'footer';
 

@@ -1,0 +1,204 @@
+@use 'base';
+@use 'mixins';
+
+.section-need {
+  background-color: #2F0428;
+  padding-top: 160px;
+  padding-bottom: 80px;
+
+  @include mixins.respond(lg) {
+    padding-top: 80px;
+  }
+
+  @include mixins.respond(sm) {
+    padding-block: 40px;
+  }
+  .container {
+    position: relative;
+  }
+}
+
+.need {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @include mixins.respond(lg) {
+    gap: 32px;
+  }
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    max-width: 1144px;
+
+    @include mixins.respond(lg) {
+      gap: 16px;
+      flex-direction: column;
+    }
+
+    .heading__h2 {
+      max-width: 912px;
+      @include mixins.respond(xl) {
+        max-width: 712px;
+      }
+      &__accent {
+        color: base.$color--primary;
+      }
+    }
+  }
+  &__wrapper {
+    position: relative;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+    @include mixins.respond(lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__flex {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    &:first-child {
+      .need__card {
+        margin-top: 165px;
+        @include mixins.respond(lg) {
+          margin-top: unset;
+        }
+      }
+    }
+    &:last-child {
+      .need__card:first-child {
+        margin-top: 88px;
+        @include mixins.respond(lg) {
+          margin-top: unset;
+        }
+      }
+    }
+  }
+  &__card {
+    border-radius: 24px;
+    background-color: #FFF9EB;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+
+    @include mixins.respond(xl) {
+      padding: 16px;
+      border-radius: 18px;
+    }
+
+    @include mixins.respond(lg) {
+      border-radius: 16px;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 128px;
+      position: relative;
+      z-index: 1;
+
+      @include mixins.respond(xl) {
+        gap: 64px;
+      }
+
+      img {
+        max-width: 48px;
+        max-height: 48px;
+        width: 100%;
+        height: 100%;
+
+        @include mixins.respond(xl) {
+          max-width: 32px;
+          max-height: 32px;
+        }
+      }
+    }
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    &__title {
+      color: #000;
+      font-family: base.$font-primary;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 88%; /* 42.24px */
+      letter-spacing: -0.48px;
+      text-transform: uppercase;
+
+      @include mixins.respond(xl) {
+        font-size: 32px;
+        letter-spacing: -0.18px;
+      }
+    }
+    &__summary {
+      color: rgba(0, 0, 0, 0.64);
+      font-family: base.$font-base;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 25.6px */
+      letter-spacing: -0.64px;
+    }
+    &__bg {
+      max-width: 320px;
+      max-height: 320px;
+      width: 100%;
+      height: 100%;
+
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      top: -80px;
+      right: -64px;
+
+      @include mixins.respond(sm) {
+        max-width: 220px;
+        max-height: 220px;
+      }
+    }
+  }
+  &__ornament {
+    max-width: 136px;
+    width: 100%;
+
+    position: absolute;
+    bottom: 64px;
+    left: 24px;
+
+    @include mixins.respond(xl) {
+      max-width: 84px;
+      bottom: 32px;
+      left: 14px;
+    }
+  }
+  &__overlay {
+    max-width: 1231px;
+    width: 100%;
+    position: absolute;
+    bottom: 354px;
+    left: 80px;
+
+    @include mixins.respond(xl) {
+      bottom: 184px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    @include mixins.respond(sm) {
+      max-width: 220px;
+      max-height: 220px;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
