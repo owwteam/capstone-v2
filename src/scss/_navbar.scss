@@ -53,12 +53,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 30px;
     white-space: nowrap;
-
-    @include mixins.respond(lg) {
-      gap: 32px;
-    }
 
     .nav__link {
       color: base.$color--white;

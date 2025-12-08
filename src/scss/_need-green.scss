@@ -1,0 +1,17 @@
+@use 'base';
+@use 'mixins';
+
+.need-green {
+  background-color: #01120C;
+  .need {
+    &__card {
+      background-color: #175941;
+      &__title {
+        color: base.$color--white;
+      }
+      &__summary {
+        color: rgba(255, 255, 255, 0.64);
+      }
+    }
+  }
+}

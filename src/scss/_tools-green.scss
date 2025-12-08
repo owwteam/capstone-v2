@@ -1,0 +1,18 @@
+@use 'base';
+@use 'mixins';
+
+.tools-green {
+  background-color: #01120C;
+  .tools {
+    &__download {
+      background-color: #2C1A32;
+      &__secondary {
+        background-color: #175941;
+        color: base.$color--white;
+        .tools__download__label {
+          color: inherit;
+        }
+      }
+    }
+  }
+}
