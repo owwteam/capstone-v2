@@ -34,6 +34,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Clash Display';
+  src: url('../assets/images/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('../assets/images/ClashDisplay-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 @mixin font($type) {
   @if $type == 'primary' {
     font-family: "Thunder", sans-serif;

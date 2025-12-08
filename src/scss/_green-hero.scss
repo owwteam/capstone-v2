@@ -1,0 +1,21 @@
+@use 'base';
+@use 'mixins';
+
+.green-hero {
+  background: radial-gradient(112.52% 180.03% at 0% 0%, #000 0%, rgba(0, 38, 25, 0.00) 100%), #002619;
+  .integrations {
+    .eyebrow__accent {
+      color: #FFA100;
+    }
+    &__media {
+      max-width: 481px;
+      left: 395px;
+    }
+    .join-card {
+      background-color: #175941;
+      &__icon {
+        background-color: base.$color--primary;
+      }
+    } 
+  }
+}
