@@ -1,0 +1,41 @@
+section.section-login 
+  .container
+    .login 
+      .login__head 
+        a.btn.btn--back(href="/")
+          img.btn--back--icon(src='../../assets/images/login__arrow-back.webp', alt='Deskripsi gambar')
+          | Back home
+        h2.login__label capstone Job portal
+      .login__card 
+        .login__card__head  
+          h1.login__card__title Sign in with email
+          span.login__card__span Build the next generation of decentralized solutions.
+        .login__card__inner 
+          .login__card__inputs 
+            img(src='../../assets/images/login__icon-email.webp', alt='Deskripsi gambar')
+            input(type='email', name='email__address', placeholder='Email', id='email')
+          .login__card__inputs 
+            img(src='../../assets/images/login__icon-password.webp', alt='Deskripsi gambar')
+            input(type='password', name='password', placeholder='Password', id='password')
+          a.login__forget-password(href="#") Forgot Password?
+        .login__card__inner 
+          a.btn.btn--get-started(href="#") Get Started
+        .login__card__inner.align-center 
+          span.login__span or Sign In with
+        .login__card__buttons 
+          a.btn.btn--platform(href="#") 
+            img(src='../../assets/images/login__google_icon_logo_1.webp', alt='Deskripsi gambar')
+          a.btn.btn--platform(href="#") 
+            img(src='../../assets/images/login__facebook_svg_icon_1.webp', alt='Deskripsi gambar')
+          a.btn.btn--platform(href="#") 
+            img(src='../../assets/images/login__apple_173_icon_1.webp', alt='Deskripsi gambar')
+        .login__card__inner.align-center
+          span.label__sign-up Don’t have an account?
+            a(href="#") Sign Up
+      .login__ornament 
+        img(src='../../assets/images/job-hero__vector-tigline-title.webp', alt='Deskripsi gambar')
+  .login__overlay
+    .login__overlay__inner
+      img(src='../../assets/images/login__intersect.webp', alt='Deskripsi gambar')
+    .login__overlay__inner
+      img(src='../../assets/images/login__union.webp', alt='Deskripsi gambar')

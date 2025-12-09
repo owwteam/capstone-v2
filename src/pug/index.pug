@@ -3,7 +3,7 @@ html
   head
     meta(charset="UTF-8")
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    title Capstone-v2
+    title Blue Page
     link(rel="stylesheet", href="style.css")
     link(rel="icon", type="image/png", href="../assets/images/brand__icon.webp")
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,12 +14,11 @@ html
   body
     include parts/navbar.pug
     main
-      include parts/hero.pug
-      include parts/services.pug
-      include parts/connecting.pug
-      include parts/portal.pug
-    include parts/footer.pug
-    +footer('footer--blue-bg', '../assets/images/Tagline-bg--red.webp')
+      include parts/blue-hero.pug
+      include parts/partners.pug
+      include parts/aboutus.pug
+    //- include parts/footer.pug
+    //- +footer('footer--green-bg', '../assets/images/Tagline-bg.webp')
 
     script(src="https://unpkg.com/aos@2.3.1/dist/aos.js")
     script(src="script.js")
