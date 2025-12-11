@@ -15,8 +15,9 @@ html
     //- include parts/navbar.pug
     main
       include parts/orange-hero.pug
-      //- include parts/partners.pug
-      //- include parts/aboutus.pug
+      include parts/partners.pug
+      +partners('partners--orange')
+      include parts/system.pug
     //- include parts/footer.pug
     //- +footer('footer--green-bg', '../assets/images/Tagline-bg.webp')
 
