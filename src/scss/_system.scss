@@ -1,0 +1,246 @@
+@use 'base';
+@use 'mixins';
+
+.section-system {
+  background-color: #FFA100;
+  padding-top: 104px;
+  padding-bottom: 52px;
+}
+
+.system {
+  display: flex;
+  flex-direction: column;
+  @include mixins.respond(lg) {
+    gap: 32px;
+  }
+  &__label {
+    color: #BC002C;
+    font-family: base.$font-primary;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    img {
+      max-width: 14px;
+      max-height: 14px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .heading__h2 {
+    color: #FFF;
+    font-family: base.$font-primary;
+    font-size: 110px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 110px */
+    letter-spacing: -1.1px;
+    text-transform: uppercase;
+    @include mixins.respond(xl) {
+      font-size: 86px;
+    }
+    @include mixins.respond(lg) {
+      order: 3;
+      letter-spacing: 0;
+    }
+    @include mixins.respond(sm) {
+      font-size: 42px;
+    }
+    &__accent {
+      color: #BC002C;
+    }
+    &__box {
+      margin-left: 104px;
+      display: flex;
+      gap: 8px;
+      @include mixins.respond(sm) {
+        margin-left: 0;
+      }
+    }
+    &__fw {
+      font-weight: 400;
+    }
+  }
+  &__number {
+    color: #BC002C;
+    font-family: base.$font-primary;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%; /* 48px */
+    letter-spacing: -0.8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 92px;
+
+    @include mixins.respond(xl) {
+      gap: 42px;
+      font-size: 32px;
+    }
+    img {
+      max-width: 24px;
+      max-height: 24px;
+      width: 100%;
+      height: 100%;
+      @include mixins.respond(lg) {
+        max-width: 16px;
+      }
+    }
+  }
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include mixins.respond(lg) {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: flex-end;
+    gap: 368px;
+    @include mixins.respond(xl) {
+      gap: 210px;
+    }
+    @include mixins.respond(lg) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 32px;
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 328px;
+    width: 100%;
+    @include mixins.respond(lg) {
+      max-width: 528px;
+    }
+    @include mixins.respond(sm) {
+      gap: 16px;
+    }
+    img {
+      width: 100%;
+      @include mixins.respond(sm) {
+        border-radius: 16px;
+      }
+    }
+    &__title {
+      color: #FFF;
+      font-family: base.$font-primary;
+      font-size: 100px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 100%; /* 100px */
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      margin-bottom: -8px;
+      margin-left: 20px;
+      @include mixins.respond(xl) {
+        font-size: 86px;
+      }
+    }
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      background-color: #BC002C;
+      padding: 17px 12px 12px;
+      border-radius: 40px;
+      border: 4px solid #FFF;
+      max-width: 224px;
+
+      position: absolute;
+      top: 73px;
+      right: -72px;
+      transform: translateX(72px);
+      @include mixins.respond(sm) {
+        position: relative;
+        top: unset;
+        right: unset;
+        transform: unset;
+        max-width: 100%;
+        border-radius: 18px;
+        
+      }
+    }
+    &__subtext {
+      border-radius: 30px;
+      background-color: #FFA100;
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      
+      color: #FFF;
+      font-family: base.$font-primary;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%; /* 28px */
+      letter-spacing: -0.28px;
+      text-transform: uppercase;
+      @include mixins.respond(xl) {
+        font-size: 26px;
+      }
+      @include mixins.respond(sm) {
+        border-radius: 16px;
+      }
+      img {
+        max-width: 16px;
+        width: 100%;
+        align-self: flex-end;
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 449px;
+    @include mixins.respond(lg) {
+      max-width: 100%;
+      gap: 16px;
+    }
+    &__desc {
+      color: rgba(255, 255, 255, 0.80);
+      text-align: justify;
+      font-family: base.$font-base;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%; /* 32px */
+      @include mixins.respond(xl) {
+        font-size: 16px;
+      }
+    }
+  }
+  .btn--learn-more {
+    color: #FFF;
+    font-family: base.$font-primary;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%; /* 21.6px */
+    letter-spacing: 1.44px;
+    text-transform: uppercase;
+    gap: 2px;
+    padding: 14px 28px 12px;
+    border-radius: 100px;
+    border: 4px solid #FFF;
+    background-color: #BC002C;
+    img {
+      max-width: 18px;
+      max-height: 18px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
