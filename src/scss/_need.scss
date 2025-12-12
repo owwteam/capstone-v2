@@ -42,6 +42,10 @@
       @include mixins.respond(xl) {
         max-width: 712px;
       }
+      @include mixins.respond(sm) {
+        font-size: 40px;
+        letter-spacing: -0.4px;
+      }
       &__accent {
         color: base.$color--primary;
       }

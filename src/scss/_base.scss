@@ -77,8 +77,8 @@ section{
   }
 
   @include mixins.respond(sm) {
-    font-size: 54px;
-    letter-spacing: -0.18px;
+    font-size: 72px;
+    letter-spacing: -0.78px;
   }
 }
 
@@ -97,14 +97,14 @@ section{
   }
 
   @include mixins.respond(xl) {
-    font-size: 48px;
+    font-size: 56px;
     letter-spacing: -0.24px;
   }
 
-  @include mixins.respond(sm) {
-    font-size: 42px;
-    letter-spacing: -0.14px;
-  }
+  // @include mixins.respond(sm) {
+  //   font-size: 42px;
+  //   letter-spacing: -0.14px;
+  // }
 }
 
 .heading__h3 {
@@ -202,6 +202,7 @@ section{
 
     @include mixins.respond(sm) {
       padding: 16px 28px 12px;
+      width: 100%;
     }
   }
 

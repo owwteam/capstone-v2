@@ -27,10 +27,13 @@
     gap: 24px;
   }
   @include mixins.respond(lg) {
-    flex-direction: column;
-    gap: 24px;
+    flex-direction: column-reverse;
+    gap: 16px;
     padding-top: 60px;
-    padding-bottom: 32px;
+    padding-bottom: 40px;
+  }
+  @include mixins.respond(sm) {
+    padding-top: 431px;
   }
   &__subtext {
     display: inline-flex;
@@ -42,7 +45,7 @@
       align-items: flex-start;
     }
     @include mixins.respond(lg) {
-      gap: 16px;
+      gap: 24px;
     }
   }
   .heading__h1 {
@@ -63,8 +66,8 @@
       max-width: 100%;
     }
     @include mixins.respond(sm) {
-      font-size: 42px;
-      letter-spacing: -0.2px;
+      font-size: 64px;
+      letter-spacing: -0.64px;
     }
     &__accent-2 {
       background: linear-gradient(93deg, #FFF 71.6%, rgba(255, 255, 255, 0.06) 99.44%);
@@ -93,7 +96,7 @@
         max-width: 120px;
       }
       @include mixins.respond(sm) {
-        display: none;
+        max-width: 104px;
       }
     }
     &__link {
@@ -106,6 +109,9 @@
       @include mixins.respond(xl) {
         padding: 12px 18px;
       }
+      @include mixins.respond(sm) {
+        padding: 8px;
+      }
       img {
         max-width: 32px;
         max-height: 32px;
@@ -113,6 +119,9 @@
         height: 100%;
         @include mixins.respond(xl) {
           max-width: 24px;
+        }
+        @include mixins.respond(sm) {
+          max-width: 14px;
         }
       }
     }
@@ -140,8 +149,19 @@
     max-width: 274px;
     width: 100%;
     padding: 14px 12px 12px 12px;
+    @include mixins.respond(lg) {
+      display: none;
+    }
     @include mixins.respond(sm) {
-      max-width: 100%;
+      display: flex;
+      position: absolute;
+      max-width: 169px;
+      padding: 8px;
+      border-radius: 24px;
+      gap: 8px;
+
+      top: 340px;
+      right: 0;
     }
     &__head {
       display: flex;
@@ -158,6 +178,9 @@
         border: 3px solid #BC002C;
         border-radius: 99px;
         z-index: 2;
+        @include mixins.respond(sm) {
+          max-width: 28px;
+        }
         &:not(:first-child) {
           margin-left: -12px;
           z-index: 1;
@@ -179,6 +202,9 @@
       @include mixins.respond(xl) {
         font-size: 24px;
       }
+      @include mixins.respond(sm) {
+        font-size: 16px;
+      }
     }
     &__body {
       display: flex;
@@ -190,6 +216,11 @@
       align-items: flex-end;
       @include mixins.respond(sm) {
         align-items: flex-start;
+      }
+      @include mixins.respond(sm) {
+        gap: 0;
+        padding: 8px;
+        border-radius: 16px;
       }
     }
     &__desc {
@@ -204,10 +235,17 @@
       @include mixins.respond(xl) {
         font-size: 24px;
       }
+      @include mixins.respond(sm) {
+        font-size: 16px;
+        max-width: 88px;
+      }
     }
     &__icon {
       max-width: 16px;
       max-height: 16px;
+      @include mixins.respond(sm) {
+        align-self: flex-end;
+      }
     }
   }
   &__label {
@@ -251,10 +289,25 @@
       max-width: 718px;
     }
     @include mixins.respond(sm) {
-      display: none;
+      bottom: unset;
+      left: unset;
+      top: -55px;
+      right: -66px;
+      min-width: 523px;
     }
     img {
       width: 100%;
+      &:last-child {
+        display: none;
+      }
+      @include mixins.respond(sm) {
+        &:first-child {
+          display: none;
+        }
+        &:last-child {
+          display: inline-flex;
+        }
+      }
     }
     &__bg {
       position: absolute;

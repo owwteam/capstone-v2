@@ -10,6 +10,10 @@
     &__media {
       max-width: 481px;
       left: 395px;
+      @include mixins.respond(sm) {
+        max-width: 514px;
+        left: unset;
+      }
     }
     .join-card {
       background-color: #175941;

@@ -7,7 +7,7 @@
     position: relative;
     padding-top: 45px;
     @include mixins.respond(sm) {
-      padding-top: 24px;
+      padding-top: 354px;
     }
   }
 }
@@ -31,10 +31,8 @@
   @include mixins.respond(sm) {
     padding-top: 42px;
     padding-bottom: 24px;
-  }
-
-  @include mixins.respond(sm) {
-    gap: 32px;
+    gap: 40px;
+    position: unset;
   }
   &__left {
     max-width: 585px;
@@ -52,6 +50,8 @@
 
     @include mixins.respond(sm) {
       gap: 16px;
+      position: relative;
+      z-index: 2;
     }
     .eyebrow {
       &__accent {
@@ -85,6 +85,9 @@
     @include mixins.respond(xl) {
       gap: 32px;
     }
+    @include mixins.respond(sm) {
+      z-index: 2;
+    }
     .join-card {
       display: flex;
       flex-direction: column;
@@ -99,13 +102,20 @@
         border-radius: 24px;
       }
       @include mixins.respond(sm) {
-        max-width: 100%;
+        max-width: 194px;
+        position: absolute;
+        top: -356px;
+        right: 0;
       }
       &__head {
         padding: 8px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include mixins.respond(sm) {
+          padding: 0px;
+          padding-left: 16px;
+        }
       }
       &__title {
         color: #FFF;
@@ -121,7 +131,12 @@
 
         @include mixins.respond(xl) {
           font-size: 24px;
-          max-width: 82px;
+          max-width: unset;
+        }
+
+        @include mixins.respond(sm) {
+          font-size: 16px;
+          letter-spacing: -0.16px;
         }
       }
       &__icon {
@@ -135,6 +150,9 @@
         @include mixins.respond(xl) {
           padding: 12px;
         }
+        @include mixins.respond(sm) {
+          padding: 8px;
+        }
         img {
           max-width: 20px;
           max-height: 20px;
@@ -142,8 +160,8 @@
           height: 100%;
 
           @include mixins.respond(xl) {
-            max-width: 16px;
-            max-height: 16px;
+            max-width: 12px;
+            max-height: 12px;
           }
         }
       }
@@ -172,6 +190,10 @@
           font-size: 72px;
           letter-spacing: -0.4px;
         }
+        @include mixins.respond(sm) {
+          font-size: 40px;
+          letter-spacing: -0.4px;
+        }
       }
     }
   }
@@ -183,9 +205,6 @@
     @include mixins.respond(lg) {
       gap: 24px;
     }
-    @include mixins.respond(sm) {
-      gap: 16px;
-    }
     &__subtext {
       display: flex;
       flex-direction: column;
@@ -195,6 +214,9 @@
         max-height: 31px;
         width: 100%;
         height: 100%;
+        @include mixins.respond(sm) {
+          display: none;
+        }
       }
     }
     &__desc {
@@ -205,6 +227,9 @@
       font-weight: 600;
       line-height: 160%; /* 25.6px */
       text-transform: uppercase;
+      @include mixins.respond(sm) {
+        font-size: 14px;
+      }
     }
   }
   &__media {
@@ -225,10 +250,35 @@
     }
 
     @include mixins.respond(sm) {
-        display: none;
-      }
+      bottom: unset;
+      top: -26px;
+      right: -40px;
+      min-width: 514px;
+      max-width: 514px;
+      z-index: 1;
+    }
     img {
       width: 100%;
+      // @include mixins.respond(sm) {
+      //   &:first-child {
+      //     display: none;
+      //   }
+      // }
+      // @include mixins.respond(min-sm) {
+      //   &:last-child {
+      //     display: none;
+      //   }
+      // }
+    }
+    @include mixins.respond(sm) {
+      img.integrations__hero--desktop {
+        display: none;
+      }
+    }
+    @include mixins.respond(min-sm) {
+      img.integrations__hero--mobile {
+        display: none;
+      }
     }
   }
   &__overlay {
@@ -281,7 +331,7 @@
       }
 
       @include mixins.respond(sm) {
-        display: none;
+        min-height: 528px;
       }
     }
   }
