@@ -2,11 +2,17 @@ section.section-bluepage
   .container 
     .bluepage 
       .bluepage__head 
+        .bluepage__trusted.mobile
+          .bluepage__trusted__subtext 
+            h2.bluepage__trusted__title 32K
+          .bluepage__trusted__content 
+            img(src='../../assets/images/job-hero__vector-tigline.webp', alt='Deskripsi gambar')
+            span.bluepage__trusted__desc Trusted by teams worldwide
         h1.heading__h1 The Middleware 
           span.heading__h1__accent Mesh for Regulated 
           | Operations.
       .bluepage__bottom 
-        .bluepage__trusted
+        .bluepage__trusted.desktop
           .bluepage__trusted__subtext 
             h2.bluepage__trusted__title 32K
           .bluepage__trusted__content 
@@ -17,8 +23,11 @@ section.section-bluepage
           p.bluepage__item__desc Relianta unifies APIs, data, and human workflows so banks, payment platforms, and marketplaces can ship faster with confidence.
         .bluepage__card 
           .bluepage__card__cyrcle 
-          h3.bluepage__card__title GET STARTED
+          h3.bluepage__card__title GET
+            br
+            | STARTED
     .bluepage__overlay 
-      img.bluepage__overlay__person(src='../../assets/images/bluepage__hero-person.webp', alt='Deskripsi gambar')
+      img.bluepage__overlay__person.desktop(src='../../assets/images/bluepage__hero-person.webp', alt='Deskripsi gambar')
+      img.bluepage__overlay__person.mobile(src='../../assets/images/bluepage__hero-person--mobile.webp', alt='Deskripsi gambar')
       img.bluepage__overlay__global(src='../../assets/images/bluepage__hero-global.webp', alt='Deskripsi gambar')
       //- .bluepage__overlay__bg
