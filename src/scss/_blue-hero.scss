@@ -281,7 +281,7 @@
         display: none;
         @include mixins.respond(lg) {
           display: inline-block;
-          top: -55px;
+          top: -35px;
           right: -55px;
         }
 
