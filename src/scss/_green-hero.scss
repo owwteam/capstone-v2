@@ -11,8 +11,9 @@
       max-width: 481px;
       left: 395px;
       @include mixins.respond(sm) {
-        max-width: 514px;
+        max-width: 481.101px;
         left: unset;
+        right: -23.55px;
       }
     }
     .join-card {

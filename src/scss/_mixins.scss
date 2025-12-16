@@ -9,6 +9,8 @@
     @media (max-width: 1200px) { @content; }
   } @else if $breakpoint == min-sm {
     @media (min-width: 577px) { @content; }
+  } @else if $breakpoint == min-lg {
+    @media (min-width: 993px) { @content; }
   }
 }
 
