@@ -22,7 +22,6 @@
   z-index: 2;
 
   @include mixins.respond(xl) {
-    padding-top: 149px;
     padding-bottom: 60px;
     gap: 24px;
   }
@@ -74,6 +73,12 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      @include mixins.respond(sm) {
+        background: unset;
+        background-clip: unset;
+        -webkit-background-clip: unset;
+        -webkit-text-fill-color: unset;
+      }
     }
     &__accent {
       color: #BC002C;

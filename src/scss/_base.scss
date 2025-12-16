@@ -100,11 +100,6 @@ section{
     font-size: 56px;
     letter-spacing: -0.24px;
   }
-
-  // @include mixins.respond(sm) {
-  //   font-size: 42px;
-  //   letter-spacing: -0.14px;
-  // }
 }
 
 .heading__h3 {
@@ -143,12 +138,6 @@ section{
 
   &__accent {
     color: $color--primary;
-  }
-
-  @include mixins.respond(lg) {
-    font-size: 18px;
-    max-width: 98px;
-    letter-spacing: 0;
   }
 }
 
@@ -337,4 +326,29 @@ section{
 
 .text--white {
   color: $color--white;
+}
+
+.btn--learn-more {
+  color: #FFF;
+  font-family: $font-primary;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%; /* 21.6px */
+  letter-spacing: 1.44px;
+  text-transform: uppercase;
+  gap: 2px;
+  padding: 14px 28px 12px;
+  border-radius: 100px;
+  border: 4px solid #FFF;
+  background-color: #BC002C;
+  @include mixins.respond(sm) {
+    width: 100%;
+  }
+  img {
+    max-width: 18px;
+    max-height: 18px;
+    width: 100%;
+    height: 100%;
+  }
 }

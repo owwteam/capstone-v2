@@ -6,8 +6,8 @@
   padding-top: 53px;
   padding-bottom: 100px;
   @include mixins.respond(lg) {
-    padding-top: 32px;
-    padding-bottom: 50px;
+    padding-top: 40px;
+    padding-bottom: 20px;
   }
 }
 
@@ -100,7 +100,9 @@
     flex-direction: column;
     gap: 16px;
     position: relative;
-    z-index: 1;
+    @include mixins.respond(xl) {
+      z-index: 1;
+    }
   }
   &__item {
     background-color: #FFF9EB;
@@ -108,9 +110,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 24px;
     @include mixins.respond(lg) {
       padding: 16px;
+      flex-direction: column;
+      align-items: flex-start;
     }
     @include mixins.respond(sm) {
       flex-direction: column;
@@ -118,31 +122,30 @@
     &__content {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       max-width: 1112px;
       width: 100%;
+      gap: 16px;
       @include mixins.respond(xl) {
         max-width: 780px;
       }
       @include mixins.respond(lg) {
         flex-direction: column;
-        gap: 8px;
+        align-items: flex-start;
+        gap: 24px;
       }
     }
     &__subtext {
-      max-width: 912px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 16px;
+      gap: 24px;
       width: 100%;
-
+    }
+    &__head {
+      max-width: 448px;
+      width: 100%;
       @include mixins.respond(xl) {
-        max-width: 712px;
-      }
-      @include mixins.respond(lg) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
+        max-width: 348px;
       }
     }
     &__number {
@@ -205,6 +208,7 @@
       }
       @include mixins.respond(sm) {
         font-size: 14px;
+        max-width: 224px;
       }
     }
     &__link {
@@ -215,16 +219,16 @@
       border-radius: 100px;
       background-color: #BC002C;
       @include mixins.respond(xl) {
-        padding: 12px 18px;
+        // padding: 12px 18px;
       }
       @include mixins.respond(sm) {
-        width: 100%;
+        // width: 100%;
       }
       img {
         max-width: 32px;
-        width: 100%;
+        width: 32px;
         @include mixins.respond(xl) {
-          max-width: 18px;
+          // max-width: 18px;
         }
       }
     }

@@ -23,7 +23,9 @@
     grid-template-columns: repeat(6, auto);
   }
   @include mixins.respond(sm) {
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
   &__logo {
     max-width: 202px;
@@ -34,6 +36,10 @@
     margin: auto;
     @include mixins.respond(xl) {
       max-width: 142px;
+    }
+    @include mixins.respond(sm) {
+      max-width: 101px;
+      margin: unset;
     }
     &:first-child {
       @include mixins.respond(lg) {

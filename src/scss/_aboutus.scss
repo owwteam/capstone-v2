@@ -17,7 +17,6 @@
   }
   &__wrapper {
     position: relative;
-    // background: linear-gradient(90deg, #0B0E2E 0%, #32387F 59.36%);
     width: 100%;
   }
   &__content {
@@ -28,9 +27,14 @@
     justify-content: space-between;
     height: 100%;
     padding: 64px 32px;
-    gap: 16px;
+    gap: 40px;
     @include mixins.respond(lg) {
-      padding: 32px 16px;
+      padding: 64px 16px;
+    }
+    &__bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
     }
   }
   &__overlay {
@@ -58,8 +62,9 @@
       line-height: 130%; /* 31.2px */
       letter-spacing: -1.2px;
       text-transform: uppercase;
-      @include mixins.respond(xl) {
-        font-size: 20px;
+      @include mixins.respond(sm) {
+        font-size: 14px;
+        letter-spacing: -0.7px;
       }
     }
     &__vector {
@@ -69,7 +74,7 @@
         max-width: 98px;
       }
       @include mixins.respond(lg) {
-        display: none;
+        max-width: 64px;
       }
     }
   }
@@ -78,6 +83,11 @@
     justify-content: space-between;
     gap: 57px;
     flex-direction: column;
+    @include mixins.respond(lg) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 16px;
+    }
     &__tagline {
       max-width: 105px;
       width: 100%;
@@ -85,7 +95,8 @@
         max-width: 64px;
       }
       @include mixins.respond(lg) {
-        display: none;
+        // display: none;
+        max-width: 24px;
       }
     }
     .heading__h2 {
@@ -103,10 +114,10 @@
       }
       @include mixins.respond(xl) {
         font-size: 72px;
-        letter-spacing: -1.12px;
+        letter-spacing: -1.6px;
       }
       @include mixins.respond(sm) {
-        font-size: 42px;
+        font-size: 40px;
       }
       &__accent {
         color: #FF4D2F;
@@ -157,5 +168,9 @@
   .bluepage__card {
     top: 232px;
     right: -70px;
+    @include mixins.respond(lg) {
+      top: unset;
+      right: unset;
+    }
   }
 }
